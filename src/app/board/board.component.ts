@@ -1,4 +1,3 @@
-import { trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./board.component.scss'],
 })
 export class BoardComponent implements OnInit {
-  squares!: any[];
-  xIsNext: boolean | undefined;
-  winner!: string | null;
+  squares: any[];
+  xIsNext: boolean;
+  winner: string;
 
   constructor() {}
 
@@ -29,7 +28,7 @@ export class BoardComponent implements OnInit {
 
   makeMove(idx: number) {
     if (!this.squares[idx]) {
-      this.squares?.splice(idx, 1, this.player);
+      this.squares.splice(idx, 1, this.player);
       this.xIsNext = !this.xIsNext;
     }
 
